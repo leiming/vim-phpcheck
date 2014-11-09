@@ -13,7 +13,7 @@ if !exists('g:PHP_SYNTAX_CHECK_BIN')
 endif
 
 function! PhpCheckSyntax()
-    if &filetype = 'php'
+    if &filetype == 'php'
         let result = system(g:PHP_SYNTAX_CHECK_BIN.' -l -n '.expand('%'))
         if (stridx(result, 'No syntax errors detected') == -1)
             echohl WarningMsg | echo result | echohl None

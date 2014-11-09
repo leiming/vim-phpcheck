@@ -3,7 +3,20 @@ vim-phpcheck
 
 一个顺手写的 PHP 语法检查插件
 
-参考了：[phpcheck.vim](phpcheck.vim) 与 [vim-phpqa](vim-phpqa)
+参考了：[phpcheck.vim][1] 与 [vim-phpqa][2] .
 
-[phpcheck.vim]:http://vim.sourceforge.net/scripts/script.php?script_id=4984
-[vim-phpqa]:https://github.com/joonty/vim-phpqa
+## Usage:
+
+```vim
+" 用 Vundle.vim 安装插件
+Plugin 'leiming/vim-phpcheck'
+
+" 设置插件自动运行，即保存时触发 PHP 代码检查
+let g:php_check_autorun = 1
+
+" 设置 <F6> 为代码检查映射键
+noremap <F6> :call PhpCheckSyntax()<CR>
+```
+
+[1]:http://vim.sourceforge.net/scripts/script.php?script_id=4984
+[2]:https://github.com/joonty/vim-phpqa
