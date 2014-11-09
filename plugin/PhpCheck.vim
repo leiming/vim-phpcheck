@@ -5,7 +5,7 @@ endif
 let g:php_check = 1
 
 if !exists("g:php_check_autorun")
-    let g:php_check_autorun = 0;
+    let g:php_check_autorun = 0
 endif
 
 if !exists('g:PHP_SYNTAX_CHECK_BIN')
@@ -25,3 +25,11 @@ if g:php_check_autorun
     autocmd BufWritePost * call PhpCheckSyntax()
 endif
 
+function! CallPhpCheckSyntax()
+    if g:php_check_autorun
+        w
+    else
+        w
+        call PhpCheckSyntax()
+    endif
+endfunction

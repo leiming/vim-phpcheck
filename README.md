@@ -11,11 +11,12 @@ vim-phpcheck
 " 用 Vundle.vim 安装插件
 Plugin 'leiming/vim-phpcheck'
 
-" 设置插件自动运行，即保存时触发 PHP 代码检查
+" 设置插件自动运行，即写入文件后触发 PHP 代码检查
 let g:php_check_autorun = 1
 
 " 设置 <F6> 为代码检查映射键
-noremap <F6> :call PhpCheckSyntax()<CR>
+noremap <F6> :call CallPhpCheckSyntax()<CR>
+inoremap <F6> <ESC>:call CallPhpCheckSyntax()<CR>
 ```
 
 [1]:http://vim.sourceforge.net/scripts/script.php?script_id=4984
